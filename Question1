@@ -1,0 +1,2 @@
+In replica set controller may create pod in any worker node. Suppose we have 3 worker node and i want to create 3 pods , 2 pods may go in worker 1 and another pod in worker 2. worker 3 is not choose to create any pod.
+but in daemon set ,it make sure pod is created in all worker node. These pods are mainly for monitoring and controlling purpose.
