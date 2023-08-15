@@ -1,0 +1,7 @@
+suppose when project is deployed while upgrading we need to make sure there is 0 downtime when we do rolling upgrade.
+so before applying new patch we need to make sure old pod running for some amont of time when new pod is launchned. ( v2 app may take to come to ready state )
+
+so using bellow command we can make sure old pod is running for sometime even after upgrade
+kubectl patch deployment kubia -p '{"spec": {"minReadySeconds": 30}}'
+then we can upgarade/downgrade the image
+kubectl set image deployment kubia nodejs=luksa/kubia:v2
