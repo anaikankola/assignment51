@@ -1,0 +1,13 @@
+1) applied all yaml file inside k8s-specificationsin
+  [root@ip-172-31-43-98 k8s-specifications]# kubectl apply -f .
+2) Check the svc command to see nodePort is created for voting and result pod
+  kubectl get svc
+3) Check the endpoint details
+  kubectl get ep
+4)Logged in through browser using public ip and nodePort details for voting and result checking
+5)Pod deleting
+  a) when voting pod deleted , new instance spawned and in running state
+  b) when worker por deleted, new instance spawned and in running state. No change in result
+  3) When db pod is deleted, since data is stored in pod valume all the data lost in result app.
+
+6) In order to make the result pod work we need change db pod to use hostPath value or pv/pvc or git repo volume 
