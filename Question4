@@ -9,5 +9,6 @@
   a) when voting pod deleted , new instance spawned and in running state
   b) when worker por deleted, new instance spawned and in running state. No change in result
   3) When db pod is deleted, since data is stored in pod valume all the data lost in result app.
-
-6) In order to make the result pod work we need change db pod to use hostPath value or pv/pvc or git repo volume 
+     Worker and result pod restarted we can see this from kubectl get po -o wide
+6) kubectl logs to see the logs 
+7) In order to make the result pod work we need change db pod to use hostPath value or pv/pvc or git repo volume 
